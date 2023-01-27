@@ -5,7 +5,6 @@ using System.Linq;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class MenuController : MonoBehaviour
 {
@@ -47,7 +46,6 @@ public class MenuController : MonoBehaviour
         _slotStory.First().SwitchSelect();
     }
 
-    // Update is called once per frame
     void Update()
     {
         loadingValidate.fillAmount += Validation ? Time.deltaTime : -Time.deltaTime;
@@ -72,8 +70,6 @@ public class MenuController : MonoBehaviour
         _currentIDSelect = _currentIDSelect < 0 ? _slotStory.Count - 1 : _currentIDSelect == _slotStory.Count ? 0 : _currentIDSelect;
         StartCoroutine(WaitEndFade());
     }
-
-
 
     private IEnumerator WaitEndFade()
     {
